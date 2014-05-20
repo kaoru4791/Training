@@ -1,0 +1,13 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="Ehcached:war exploded">
+    <output-path>$PROJECT_DIR$/Ehcached/target/Ehcached</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="Ehcached/web/Web" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="Ehcached" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>
