@@ -10,7 +10,7 @@ import java.util.List;
  * Created by thiennt on 5/22/14.
  */
 @XmlRootElement
-@Entity
+@Entity(name = "Employee")
 public class Employee {
     private int empId;
     private String fName;

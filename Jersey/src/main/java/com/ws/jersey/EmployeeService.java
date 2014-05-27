@@ -41,15 +41,10 @@ public class EmployeeService {
             EmployeeService service = new EmployeeService();
             System.out.println("2");
             Integer empID1 = service.addEmployee("Tduare", "Zuesdt", 44);*/
-            System.out.println("1111111111111");
             sessionFactory = new AnnotationConfiguration().configure().addAnnotatedClass(Employee.class).buildSessionFactory();
-            System.out.println("zzzzzzzzzzzzzzzzzzz");
             Session session = sessionFactory.openSession();
-            System.out.println("2222222222");
             Query query = session.createQuery("From Employee E where E.empId= "+2);
-            System.out.println("3333333333333");
             Employee employee = (Employee) query.list().get(0);
-            System.out.println("444444444444444");
 
             output = employee.toString();
         System.out.println(output);
@@ -57,9 +52,10 @@ public class EmployeeService {
             ex.printStackTrace();
         }
     }
-    @POST
+
     @Path("/add/{fName}/{lName}/{age}")
     public Integer addEmployee(@PathParam(value = "fName")String fName, @PathParam(value = "lName") String lName, @PathParam(value = "age")int age){
+        sessionFactory = new AnnotationConfiguration().configure().addAnnotatedClass(Employee.class).buildSessionFactory();
         Session session = sessionFactory.openSession();
         Transaction transaction = null;
         Integer employeeId = null;
